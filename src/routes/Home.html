@@ -1,38 +1,61 @@
-<AppBarModifier title="Home" />
+<div class="home">
+  <AppBarModifier bgColor="#161B2E" textColor="#A4B0D7" title="Check Star" false/>
+  <img src="../assets/images/logo.png" alt="f" />
+  <div class="container">
 
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  <br>
-  <br>
-  <a href="/about">About</a>
-</p>
 
-<Printable ref:printable>
+
+    <h1>Bem vindo</h1>
+    <p>
+      Agora você pode conferir todas as pesoas que circulam na sua Estação espacial
+    </p>
+<!--
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      <br>
+      <br>
+      <a href="/about">About</a>
+    </p> -->
+    <Button
+      bottom
+      size="full"
+      shortcut="enter"
+      on:click="this.root.router.go('/About')"
+    >
+
+      Iniciar
+    </Button>
+  </div>
+
+</div>
+
+
+<!-- <Printable ref:printable>
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga unde dicta at quisquam doloremque sunt soluta architecto debitis, sit quidem placeat qui nam expedita quod, mollitia suscipit porro saepe recusandae.
-</Printable>
+</Printable> -->
 
-<Button
-  size="full"
-  bottom
-  on:click="refs.printable.print()"
-  shortcut="enter"
->
-  Imprimir! (press. enter)
-</Button>
 
 <script>
   export default {
     components: {
       AppBarModifier: '@mamba/appbar/Modifier.html',
-      Printable: '@mamba/printable',
       Button: '@mamba/button',
     },
   };
 </script>
 
 <style type="text/postcss">
+  .container {
+    padding: 0 16px;
+    color: #ffdd2c;
+  }
+  h1 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+  }
   p {
-    padding: 20px;
-    font-size: 22px;
+    font-size: 14px;
+    line-height: 16px;
   }
 </style>

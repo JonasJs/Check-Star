@@ -1,0 +1,22 @@
+<div class="home">
+    <AppBarModifier bgColor="#161B2E" textColor="#A4B0D7" title="Personagem"/>
+    <div class="container">
+        <slot></slot>
+    </div>
+</div>
+
+
+<script>
+  export default {
+    components: {
+      AppBarModifier: '@mamba/appbar/Modifier.html',
+    },
+  };
+</script>
+
+<style type="text/postcss">
+  .container {
+    padding: 0 16px;
+    color: #ffdd2c;
+  }
+</style>
