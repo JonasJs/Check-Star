@@ -1,7 +1,8 @@
-<div class="home">
+<div class="ho me">
     <AppBarModifier bgColor="#161B2E" textColor="#A4B0D7" title="Personagem"/>
-    <div class="container">
+    <div class="con tainer">
         <slot></slot>
+        {tese}
     </div>
 </div>
 
@@ -11,12 +12,8 @@
     components: {
       AppBarModifier: '@mamba/appbar/Modifier.html',
     },
+    data() {
+      return { tese: 'ccc' };
+    },
   };
 </script>
-
-<style type="text/postcss">
-  .container {
-    padding: 0 16px;
-    color: #ffdd2c;
-  }
-</style>

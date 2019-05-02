@@ -1,41 +1,58 @@
-<div class="home">
+<div class="home" >
   <AppBarModifier bgColor="#161B2E" textColor="#A4B0D7" title="Personagem" false/>
-  <div class="container">
-    <h1>Luke Skywalker</h1>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aut pariatur porro incidunt, vero quos magni, iste esse ea accusamus vel quis repellat iusto laborum voluptates error quo alias ab?
-      <br>
-      <br>
-      <a href="/">Voltar</a>
-    </p>
-  </div>
+
+  {#if !loading}
+    <Details client={client}></Details>
+    <Button size="full" on:click="this.root.router.go('/history')" >Ver Historico</Button>
+  {:else}
+    <div class="loading">
+      <CircularProgress speed="15" color="#ffdf30" />
+    </div>
+  {/if}
 </div>
 
 
 
-
-
 <script>
+  import getClientData from '../helpers/getClientData.js';
+
   export default {
     components: {
       AppBarModifier: '@mamba/appbar/Modifier.html',
+      Button: '@mamba/button/Button.html',
+      CircularProgress: '@mamba/progress/Circular.html',
+      // CategoryChooser: '../components/CategoryChooser.html',
+      Details: '../components/client/details.html',
+    },
+    oncreate() {
+      const _this = this;
+      const numberRandom = Math.floor(Math.random() * (1 - 89)) + 89;
+      getClientData(numberRandom).then(function(result) {
+        _this.set({
+          client: result,
+          loading: false,
+        });
+      });
     },
     data() {
-      return {};
+      return {
+        client: null,
+        loading: true,
+      };
     },
     methods: {},
   };
 </script>
 
 <style type="text/postcss">
-  h1 {
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 32px;
+  .home {
+    padding: 0 16px;
   }
-  p {
-    font-size: 14px;
-    line-height: 16px;
+  .loading {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>

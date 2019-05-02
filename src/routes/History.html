@@ -1,0 +1,40 @@
+<div class="history" >
+  <AppBarModifier bgColor="#161B2E" textColor="#A4B0D7" title="Historico" false/>
+  <!-- <Details client={client}></Details> -->
+  {#each clients as client, i}
+    <Details client={client}></Details>
+  {/each}
+</div>
+
+
+
+<script>
+  import Storage from '@mamba/pos/api/storage.js';
+
+  export default {
+    components: {
+      AppBarModifier: '@mamba/appbar/Modifier.html',
+      Details: '../components/client/details.html',
+    },
+    oncreate() {
+      const client = JSON.parse(localStorage.getItem('person'));
+      //console.log(client);
+      this.set({ clients: client });
+
+      console.log(this.get().clients[0].name);
+    },
+    data() {
+      return {
+        clients: [],
+        loading: true,
+      };
+    },
+    methods: {},
+  };
+</script>
+
+<style type="text/postcss">
+  .history {
+    padding: 0 16px;
+  }
+</style>
