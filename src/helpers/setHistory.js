@@ -1,10 +1,9 @@
 import Storage from '@mamba/pos/api/storage.js'
 
 const getDate = () => {
-  // Obtém a data/hora atual
-  var data = new Date();
+  //Get current time date
+  const data = new Date();
 
-  // Guarda cada pedaço em uma variável
   const day = data.getDate(),
     month = data.getMonth(),
     year = data.getFullYear(),
@@ -12,11 +11,10 @@ const getDate = () => {
     minutes = data.getMinutes(),
     seconds = data.getSeconds();
 
-
   const formattedDate = day + '/' + (month + 1) + '/' + year,
     formattedHour = hours + ':' + minutes + ':' + seconds
 
-  // Mostra o resultado
+  // result return
   return formattedDate + ' às ' + formattedHour;
 }
 
@@ -32,6 +30,7 @@ const checkElement = (person, object) => {
   return response
 }
 
+// Creates and places data in storage
 const setHistory = (object) => {
   const person = JSON.parse(localStorage.getItem('person')) || []
 
