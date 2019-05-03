@@ -14,37 +14,22 @@ Recommended:
 
 ## development
 
-### With `@mamba/cli`
+### Manually
 
 ```shell
 # Install the mamba cli globally if doesn't already have it
 npm i -g @mamba/cli
 
-# Create a new mamba app at 'my-mamba-app' directory
-mamba new app my-mamba-app
-
-? Name: My Mamba App
-? Version: 0.0.1
-? Description: My new Mamba app
-
-# Enter the app directory
-cd my-mamba-app
-
-# Start the development server
-mamba app start
-```
-
-### Manually
-
-```shell
 # Clone Project
 git clone https://github.com/JonasJs/Check-Star.git
+
+# Enter the app directory
 cd my-mamba-app
 
 # Install its dependencie
 npm install
 
-# Run the development
+# Start the development server
 mamba app start
 ```
 
