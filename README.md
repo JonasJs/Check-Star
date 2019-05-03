@@ -24,7 +24,7 @@ npm i -g @mamba/cli
 git clone https://github.com/JonasJs/Check-Star.git
 
 # Enter the app directory
-cd my-mamba-app
+cd Check-Star
 
 # Install its dependencie
 npm install
