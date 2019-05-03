@@ -21,24 +21,23 @@
       AppBarModifier: '@mamba/appbar/Modifier.html',
       Button: '@mamba/button/Button.html',
       CircularProgress: '@mamba/progress/Circular.html',
-      // CategoryChooser: '../components/CategoryChooser.html',
       Details: '../components/client/details.html',
-    },
-    oncreate() {
-      const _this = this;
-      const numberRandom = Math.floor(Math.random() * (1 - 89)) + 89;
-      getClientData(numberRandom).then(function(result) {
-        _this.set({
-          client: result,
-          loading: false,
-        });
-      });
     },
     data() {
       return {
         client: null,
         loading: true,
       };
+    },
+    oncreate() {
+      const _this = this;
+      const numberRandom = Math.floor(Math.random() * (1 - 89)) + 89;
+      getClientData(numberRandom).then(result => {
+        _this.set({
+          client: result,
+          loading: false,
+        });
+      });
     },
     methods: {},
   };
@@ -49,8 +48,8 @@
     padding: 0 16px;
   }
   .loading {
-    height: 100%;
     width: 100%;
+    height: -webkit-fill-available;
     display: flex;
     justify-content: center;
     align-items: center;

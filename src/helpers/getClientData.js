@@ -1,5 +1,5 @@
-//Natives Mamba
-import Http from '@mamba/pos/api/http.js'
+/* Natives Mamba */
+import Http from '@mamba/pos/api/http.js';
 
 // Helpers
 import setHistory from './setHistory.js';
@@ -7,7 +7,7 @@ import setHistory from './setHistory.js';
 // Resquet get dates of persons
 const getClientData = async (numberRandom) => {
   const config = {
-    url: 'https://swapi.co/api/people/' + numberRandom,
+    url: `https://swapi.co/api/people/${numberRandom}`,
     headers: {
       'Content-Type': 'application/json;charset=UTF-8',
       'Cache-Control': 'no-cache',
@@ -15,20 +15,20 @@ const getClientData = async (numberRandom) => {
       'Access-Control-Allow-Methods': '*',
     },
     method: 'GET',
-    proxy: true
-  }
+    proxy: true,
+  };
   try {
 
-    const result = await Http.send(config)
-    const response = JSON.parse(result)
+    const result = await Http.send(config);
+    const response = JSON.parse(result);
 
     // Add person in history of requests
     setHistory(response);
-    return response
+    return response;
 
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 export default getClientData;
