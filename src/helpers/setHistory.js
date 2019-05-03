@@ -29,7 +29,7 @@ const checkElement = (person, object) => {
 };
 
 // Creates and places data in storage
-const setHistory = (object) => {
+const setHistory = object => {
   const person = JSON.parse(localStorage.getItem('person')) || [];
 
   if (!checkElement(person, object)) {

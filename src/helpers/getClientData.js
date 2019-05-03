@@ -5,7 +5,7 @@ import Http from '@mamba/pos/api/http.js';
 import setHistory from './setHistory.js';
 
 // Resquet get dates of persons
-const getClientData = async (numberRandom) => {
+const getClientData = async numberRandom => {
   const config = {
     url: `https://swapi.co/api/people/${numberRandom}`,
     headers: {
