@@ -1,39 +1,16 @@
 <div class="home">
-  <AppBarModifier bgColor="#161B2E" textColor="#A4B0D7" title="Check Star" false/>
+  <AppBarModifier bgColor="#020d35" textColor="#A4B0D7" title="Check Star" false />
   <img src="../assets/images/logo.png" alt="f" />
   <div class="container">
-
-
 
     <h1>Bem vindo</h1>
     <p>
       Agora você pode conferir todas as pesoas que circulam na sua Estação espacial
     </p>
-<!--
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      <br>
-      <br>
-      <a href="/about">About</a>
-    </p> -->
-    <Button
-      bottom
-      size="full"
-      shortcut="enter"
-      on:click="this.root.router.go('/Client')"
-    >
-
-      Iniciar
-    </Button>
+    <Button bottom size="full" shortcut="enter" on:click="this.root.router.go('/Client')"> Iniciar </Button>
   </div>
 
 </div>
-
-
-<!-- <Printable ref:printable>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga unde dicta at quisquam doloremque sunt soluta architecto debitis, sit quidem placeat qui nam expedita quod, mollitia suscipit porro saepe recusandae.
-</Printable> -->
-
 
 <script>
   export default {
@@ -42,6 +19,7 @@
       Button: '@mamba/button',
     },
   };
+
 </script>
 
 <style type="text/postcss">
@@ -49,11 +27,13 @@
     padding: 0 16px;
     color: #ffdd2c;
   }
+
   h1 {
     color: #fff;
     font-size: 24px;
     font-weight: bold;
   }
+
   p {
     font-size: 14px;
     line-height: 16px;

@@ -1,5 +1,5 @@
-<div class="home" >
-  <AppBarModifier bgColor="#161B2E" textColor="#A4B0D7" title="Personagem" false/>
+<div class="home">
+  <AppBarModifier bgColor="#020d35" textColor="#A4B0D7" title="Personagem" false />
 
   {#if !loading}
     <Details client={client}></Details>
@@ -10,7 +10,6 @@
     </div>
   {/if}
 </div>
-
 
 
 <script>
@@ -39,7 +38,6 @@
         });
       });
     },
-    methods: {},
   };
 </script>
 
@@ -47,9 +45,10 @@
   .home {
     padding: 0 16px;
   }
+
   .loading {
     width: 100%;
-    height: -webkit-fill-available;
+    height: stretch;
     display: flex;
     justify-content: center;
     align-items: center;

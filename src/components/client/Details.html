@@ -16,43 +16,57 @@
     </li>
 
     <li>
-      <svg width="20" height="25" viewBox="0 0 20 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2955 7.12763C18.2955 3.19144 14.5646 0 9.96212 0C5.35962 0 1.62878 3.19144 1.62878 7.12763V7.38256C0.725465 7.40236 0 8.12869 0 9.02256V12.3034C0 13.1973 0.725465 13.9236 1.62878 13.9434V17.7124C1.62878 18.4433 1.95878 19.1355 2.52878 19.603L5.93378 22.3958C5.96165 22.4187 5.98845 22.4409 6.01443 22.4626C7.33389 23.7801 8.6163 25 9.99996 25C12.2374 25 15.2398 21.9621 16.6678 20.1999L17.3955 19.603C17.9655 19.1355 18.2955 18.4433 18.2955 17.7124V13.9438H18.3333C19.2542 13.9438 20 13.2097 20 12.3034V9.02256C20 8.11623 19.2542 7.38214 18.3333 7.38214H18.2955V7.12763Z" fill="{client.skin_color}"/>
-      </svg>
-      { client.skin_color }
+      {#each client.skin_color.split(',') as skin_color}
+        <div class="{skin_color}">
+          <svg width="20" height="25" viewBox="0 0 20 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2955 7.12763C18.2955 3.19144 14.5646 0 9.96212 0C5.35962 0 1.62878 3.19144 1.62878 7.12763V7.38256C0.725465 7.40236 0 8.12869 0 9.02256V12.3034C0 13.1973 0.725465 13.9236 1.62878 13.9434V17.7124C1.62878 18.4433 1.95878 19.1355 2.52878 19.603L5.93378 22.3958C5.96165 22.4187 5.98845 22.4409 6.01443 22.4626C7.33389 23.7801 8.6163 25 9.99996 25C12.2374 25 15.2398 21.9621 16.6678 20.1999L17.3955 19.603C17.9655 19.1355 18.2955 18.4433 18.2955 17.7124V13.9438H18.3333C19.2542 13.9438 20 13.2097 20 12.3034V9.02256C20 8.11623 19.2542 7.38214 18.3333 7.38214H18.2955V7.12763Z" fill="{setFillColor(skin_color)}"/>
+          </svg>
+          { skin_color }
+        </div>
+
+      {/each}
     </li>
 
     <li>
-      <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1.0769 16.621C1.0769 15.4632 2.04075 14.5254 3.23075 14.5254V22.9077C2.04075 22.9077 1.0769 21.9699 1.0769 20.8121V16.621Z" fill="#F0B496"/>
-        <path d="M27.6084 16.621C27.6084 15.4632 26.0082 14.2916 24.8182 14.2916L25.4546 22.9077C26.6446 22.9077 27.6084 21.9699 27.6084 20.8121V16.621Z" fill="#F0B496"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.69233 1.29923L14 0L18.3077 1.29923L25.8462 7.58591V8.23559L28 17.6655H25.2521L25.2377 17.8332L28 25H24.7692V23.3025L23.6923 12.8248L22.6154 10.7292L20.3636 15.5908L14 11.6931L7 15.5908L5.38464 10.7292L4.30771 12.8248L3.23079 23.3026L3.23077 23.3023V25H0L2.76233 17.8331L2.74797 17.6655H0L2.15384 8.23553L2.15387 8.23575V7.58591L9.69233 1.29923Z" fill="{client.hair_color}"/>
-      </svg>
-
-      { client.hair_color }
+      {#each client.hair_color.split(',') as hair_color}
+        <div class="{hair_color}">
+          <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.0769 16.621C1.0769 15.4632 2.04075 14.5254 3.23075 14.5254V22.9077C2.04075 22.9077 1.0769 21.9699 1.0769 20.8121V16.621Z" fill="#F0B496"/>
+            <path d="M27.6084 16.621C27.6084 15.4632 26.0082 14.2916 24.8182 14.2916L25.4546 22.9077C26.6446 22.9077 27.6084 21.9699 27.6084 20.8121V16.621Z" fill="#F0B496"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.69233 1.29923L14 0L18.3077 1.29923L25.8462 7.58591V8.23559L28 17.6655H25.2521L25.2377 17.8332L28 25H24.7692V23.3025L23.6923 12.8248L22.6154 10.7292L20.3636 15.5908L14 11.6931L7 15.5908L5.38464 10.7292L4.30771 12.8248L3.23079 23.3026L3.23077 23.3023V25H0L2.76233 17.8331L2.74797 17.6655H0L2.15384 8.23553L2.15387 8.23575V7.58591L9.69233 1.29923Z" fill="{setFillColor(hair_color)}"/>
+          </svg>
+          { hair_color }
+        </div>
+      {/each}
     </li>
 
     <li>
-      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0)">
-          <path d="M12.5117 0.416664V4.58333" stroke="#659C35" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-          <path d="M12.5117 4.58333L14.1783 2.91666" stroke="#659C35" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-          <path d="M12.5116 4.58333L10.845 2.91666" stroke="#659C35" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-          <path d="M12.5117 24.5833V20.4167" stroke="#659C35" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-          <path d="M12.5116 20.4167L10.845 22.0833" stroke="#659C35" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-          <path d="M12.5117 20.4167L14.1783 22.0833" stroke="#659C35" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
-          <path d="M24.155 12.3508L21.1409 15.365C16.3421 20.1637 8.56169 20.1637 3.76294 15.365L0.844604 12.4467L3.85877 9.4325C8.65752 4.63375 16.4379 4.63375 21.2367 9.4325L24.155 12.3508Z" fill="#E7ECED"/>
-          <path d="M12.3625 17.3317C15.0809 17.3317 17.2846 15.128 17.2846 12.4096C17.2846 9.6912 15.0809 7.4875 12.3625 7.4875C9.64412 7.4875 7.44043 9.6912 7.44043 12.4096C7.44043 15.128 9.64412 17.3317 12.3625 17.3317Z" fill="black"/>
-          <path d="M9.52372 12.9167C9.29372 12.9167 9.10706 12.73 9.10706 12.5C9.10706 10.8917 10.4154 9.58334 12.0237 9.58334C12.2537 9.58334 12.4404 9.77 12.4404 10C12.4404 10.23 12.2537 10.4167 12.0237 10.4167C10.875 10.4167 9.94039 11.3513 9.94039 12.5C9.94039 12.73 9.75414 12.9167 9.52372 12.9167Z" fill="white"/>
-        </g>
-        <defs>
-          <clipPath id="clip0">
-            <rect width="25" height="25" fill="white"/>
-          </clipPath>
-        </defs>
-      </svg>
+      {#each client.eye_color.split(',') as eye_color}
+        <div class="{eye_color}">
+          <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0)">
+              <path d="M12.5117 0.416664V4.58333" stroke="#659C35" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M12.5117 4.58333L14.1783 2.91666" stroke="#659C35" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M12.5116 4.58333L10.845 2.91666" stroke="#659C35" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M12.5117 24.5833V20.4167" stroke="#659C35" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M12.5116 20.4167L10.845 22.0833" stroke="#659C35" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M12.5117 20.4167L14.1783 22.0833" stroke="#659C35" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
 
-      { client.eye_color }
+              <path d="M24.155 12.3508L21.1409 15.365C16.3421 20.1637 8.56169 20.1637 3.76294 15.365L0.844604 12.4467L3.85877 9.4325C8.65752 4.63375 16.4379 4.63375 21.2367 9.4325L24.155 12.3508Z" fill="#E7ECED"/>
+              <path d="M12.3625 17.3317C15.0809 17.3317 17.2846 15.128 17.2846 12.4096C17.2846 9.6912 15.0809 7.4875 12.3625 7.4875C9.64412 7.4875 7.44043 9.6912 7.44043 12.4096C7.44043 15.128 9.64412 17.3317 12.3625 17.3317Z" fill="{setFillColor(eye_color)}"/>
+
+              <path d="M9.52372 12.9167C9.29372 12.9167 9.10706 12.73 9.10706 12.5C9.10706 10.8917 10.4154 9.58334 12.0237 9.58334C12.2537 9.58334 12.4404 9.77 12.4404 10C12.4404 10.23 12.2537 10.4167 12.0237 10.4167C10.875 10.4167 9.94039 11.3513 9.94039 12.5C9.94039 12.73 9.75414 12.9167 9.52372 12.9167Z" fill="white"/>
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="25" height="25" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+
+          { eye_color }
+        </div>
+      {/each}
     </li>
 
 
@@ -84,8 +98,7 @@
 
 <script>
   // Componets
-  // import setColor from '../../helpers/setColor.js';
-
+  import setColor from '../../helpers/setColor.js';
   // Icons
   import birth from '../../assets/images/birth.svg';
   import female from '../../assets/images/female-icon.svg';
@@ -101,6 +114,11 @@
       Button: '@mamba/button/Button.html',
       PrinTableComponents: '../PrinTableComponents.html',
     },
+    helpers: {
+      setFillColor (color) {
+        return setColor(color);
+      },
+    },
     data() {
       return {
         client: 'null',
@@ -115,8 +133,6 @@
         },
       };
     },
-    oncreate() {},
-    methods: {},
   };
 </script>
 
@@ -124,6 +140,7 @@
   .person {
     color: #ffdd2c;
   }
+
   .person p {
     font-size: 12px;
   }
@@ -131,6 +148,7 @@
   .person p span {
     color: #fff;
   }
+
   .person h1 {
     color: #fff;
     font-size: 23px;
@@ -147,11 +165,15 @@
     display: flex;
     flex-wrap: wrap;
   }
+
   .person ul li {
     width: 50%;
     margin-bottom: 16px;
     text-transform: capitalize;
+    display: flex;
+    align-items: flex-end;
   }
+
   .button-print {
     margin: 24px 0 8px 0;
   }

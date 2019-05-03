@@ -1,8 +1,6 @@
-# Mamba App template
+# Check Star
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/stone-payments/pos-mamba-app-template.svg)](https://greenkeeper.io/)
-
-> A complete project template for building [Mamba](https://github.com/stone-payments/pos-mamba) apps.
+> Check start é um app desenvolvido para que você possa identificar todos os clientes/Seres que estão passando pelo a sua Estação Espacial, Para ultilizar é muito simples, bastar clickar nos botões indicados de acordo com sua função descrita, e pronto, todos os dados estão na sua mão!
 
 ## Requirements
 
@@ -14,43 +12,25 @@ Recommended:
 
 - [@mamba/cli](https://www.npmjs.com/package/@mamba/cli)
 
-## Creating a new Mamba App
+## development
 
-### With `@mamba/cli`
+### Manually
 
 ```shell
 # Install the mamba cli globally if doesn't already have it
 npm i -g @mamba/cli
 
-# Create a new mamba app at 'my-mamba-app' directory
-mamba new app my-mamba-app
-
-? Name: My Mamba App
-? Version: 0.0.1
-? Description: My new Mamba app
+# Clone Project
+git clone https://github.com/JonasJs/Check-Star.git
 
 # Enter the app directory
 cd my-mamba-app
 
+# Install its dependencie
+npm install
+
 # Start the development server
 mamba app start
-```
-
-### Manually
-
-```shell
-# Create and enter your new app directory
-mkdir my-mamba-app
-cd my-mamba-app
-
-# Install the standard mamba app template
-npx degit stone-payments/pos-mamba-app-template
-
-# Install its dependencies with 'yarn'
-npm i
-
-# Run the development server
-npm run start
 ```
 
 ## Building and deploying to the `POS`
@@ -61,8 +41,6 @@ npm run start
 # With the @mamba/cli
 mamba app build
 
-# Without the @mamba/cli
-npm run build
 ```
 
 This will generate the `dist/bundle.pos` directory and a `dist/bundle.pos.tar.gz` file, which both contains your Mamba app.
@@ -88,3 +66,4 @@ npm run serve # Starts the local http server
 ## Documentation
 
 - [Svelte](https://svelte.technology/guide)
+- [Mamba SDK](https://mambasdk-docs.stone.com.br/guide)

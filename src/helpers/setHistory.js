@@ -9,29 +9,20 @@ const getDate = () => {
   const minutes = data.getMinutes();
   const seconds = data.getSeconds();
 
-  const formattedDate = `${day}/${(month + 1)}/${year}`;
+  const formattedDate = `${day}/${month + 1}/${year}`;
   const formattedHour = `${hours}:${minutes}/${seconds}`;
 
   // result return
   return `${formattedDate} às ${formattedHour}`;
 };
 
-
 // Checks if element e exists inside array of objects
-const checkElement = (person, object) => {
-  let response = null;
-  Object.keys(person).map(key => {
-    if (person[key].name === object.name) {
-      response = true;
-    };
-  });
-  return response;
-};
+const checkElement = (person, object) =>
+  Object.keys(person).filter(key => person[key].name === object.name).length;
 
 // Creates and places data in storage
 const setHistory = object => {
   const person = JSON.parse(localStorage.getItem('person')) || [];
-
   if (!checkElement(person, object)) {
     const date = getDate();
     object.date = date;
@@ -39,7 +30,6 @@ const setHistory = object => {
 
     localStorage.setItem('person', JSON.stringify(person));
   }
-
 };
 
 export default setHistory;

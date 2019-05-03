@@ -1,5 +1,5 @@
-<div class="history" >
-  <AppBarModifier bgColor="#161B2E" textColor="#A4B0D7" title="Historico" false/>
+<div class="history">
+  <AppBarModifier bgColor="#020d35" textColor="#A4B0D7" title="Historico" false />
   <!-- <Details client={client}></Details> -->
   {#each clients as client, i}
     <Details client={client}></Details>
@@ -15,15 +15,12 @@
     data() {
       return {
         clients: [],
-        loading: true,
       };
     },
     oncreate() {
       const client = JSON.parse(localStorage.getItem('person'));
       this.set({ clients: client });
-      // console.log(this.get().clients[0].name);
     },
-    methods: {},
   };
 </script>
 
