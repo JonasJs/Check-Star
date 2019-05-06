@@ -10,7 +10,7 @@ const getDate = () => {
   const seconds = data.getSeconds();
 
   const formattedDate = `${day}/${month + 1}/${year}`;
-  const formattedHour = `${hours}:${minutes}/${seconds}`;
+  const formattedHour = `${hours}:${minutes}:${seconds}`;
 
   // result return
   return `${formattedDate} às ${formattedHour}`;

@@ -8,24 +8,15 @@ import setHistory from './setHistory.js';
 const getClientData = async numberRandom => {
   const config = {
     url: `https://swapi.co/api/people/${numberRandom}`,
-    headers: {
-      'Content-Type': 'application/json;charset=UTF-8',
-      'Cache-Control': 'no-cache',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': '*',
-    },
     method: 'GET',
-    proxy: true,
   };
   try {
-
     const result = await Http.send(config);
     const response = JSON.parse(result);
 
     // Add person in history of requests
     setHistory(response);
     return response;
-
   } catch (error) {
     console.log(error);
   }
